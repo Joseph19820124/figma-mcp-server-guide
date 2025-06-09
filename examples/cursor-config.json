@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "Figma Dev Mode MCP": {
+      "type": "sse",
+      "url": "http://127.0.0.1:3845/sse"
+    },
+    "Community Figma MCP": {
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key=YOUR_FIGMA_API_KEY", "--stdio"]
+    },
+    "Alternative Figma MCP": {
+      "command": "node",
+      "args": ["./node_modules/figma-context-mcp/dist/index.js"],
+      "env": {
+        "FIGMA_API_KEY": "YOUR_FIGMA_API_KEY"
+      }
+    }
+  },
+  "features": {
+    "mcpToolProtection": false
+  },
+  "agent": {
+    "enabled": true,
+    "autoApprove": false
+  }
+}
