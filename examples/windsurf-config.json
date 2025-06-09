@@ -1,0 +1,42 @@
+{
+  "cascade": {
+    "mcpServers": {
+      "Figma Dev Mode MCP": {
+        "type": "sse",
+        "serverUrl": "http://127.0.0.1:3845/sse",
+        "name": "Figma Official MCP Server",
+        "description": "Official Figma Dev Mode MCP Server for design-to-code workflows"
+      },
+      "Community Figma MCP": {
+        "command": "npx",
+        "args": ["-y", "figma-developer-mcp", "--figma-api-key=${FIGMA_API_KEY}", "--stdio"],
+        "env": {
+          "FIGMA_API_KEY": "YOUR_FIGMA_API_KEY_HERE"
+        },
+        "name": "Community Figma MCP",
+        "description": "Community-maintained Figma MCP Server with additional features"
+      }
+    },
+    "plugins": [
+      {
+        "name": "figma",
+        "enabled": true,
+        "autoInstall": true
+      }
+    ]
+  },
+  "editor": {
+    "aiAssist": {
+      "enabled": true,
+      "provider": "cascade",
+      "suggestions": {
+        "enabled": true,
+        "delay": 500
+      }
+    }
+  },
+  "workspace": {
+    "autoSave": "afterDelay",
+    "autoSaveDelay": 1000
+  }
+}
