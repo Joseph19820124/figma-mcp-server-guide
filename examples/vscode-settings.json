@@ -1,0 +1,33 @@
+{
+  "chat.mcp.discovery.enabled": true,
+  "chat.agent.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
+  "mcp": {
+    "servers": {
+      "Figma Dev Mode MCP": {
+        "type": "sse",
+        "url": "http://127.0.0.1:3845/sse",
+        "description": "Official Figma Dev Mode MCP Server"
+      },
+      "Community Figma MCP": {
+        "command": "npx",
+        "args": ["-y", "figma-developer-mcp", "--figma-api-key=${FIGMA_API_KEY}", "--stdio"],
+        "env": {
+          "FIGMA_API_KEY": "YOUR_FIGMA_API_KEY_HERE"
+        },
+        "description": "Community-maintained Figma MCP Server"
+      }
+    }
+  },
+  "workbench.colorTheme": "Default Dark+",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.advanced": {
+    "listCount": 10,
+    "inlineSuggestCount": 3
+  }
+}
